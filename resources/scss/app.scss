@@ -71,3 +71,22 @@ $fa-font-path: "../webfonts" !default;
         }
     }
 }
+
+#mainBottom {
+    ul {
+        li {
+            div {
+                height: 80px;
+                padding: 0 20px;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+            }
+        }
+        & li:last-child div {
+            height: 60px;
+        }
+    }
+}
