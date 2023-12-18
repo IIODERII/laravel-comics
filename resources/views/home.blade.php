@@ -1,9 +1,16 @@
 @extends('layouts.app')
 
 @section('title', 'Home')
-    
+
 @section('content')
     <main>
-        <h1><i class="fa-solid fa-house"></i> Home page</h1>
+        <div class="row">
+            @foreach ($comics as $comic)
+                <div class="col-3">
+                    <img src="{{ $comic['thumb'] }}" alt="" class="w-100">
+                    {{ $comic['title'] }}
+                </div>
+            @endforeach
+        </div>
     </main>
 @endsection
