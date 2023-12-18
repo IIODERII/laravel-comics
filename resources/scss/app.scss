@@ -90,3 +90,57 @@ $fa-font-path: "../webfonts" !default;
         }
     }
 }
+
+#footTop {
+    .wrapper {
+        background-image: url("../img/footer-bg.jpg");
+        background-size: cover;
+        overflow: hidden;
+        //height: 580px;
+
+        h3 {
+            font-size: 1.3em;
+        }
+
+        a {
+            color: #999;
+            font-size: 0.8em;
+
+            &:hover {
+                text-decoration: underline !important;
+                color: #0d6efd;
+            }
+        }
+
+        .container {
+            background-image: url("../img/dc-logo-bg.png");
+            background-repeat: no-repeat;
+
+            background-position: center right;
+        }
+
+        @media screen and (min-width: 768px) {
+            .row {
+                width: 50% !important;
+            }
+        }
+    }
+}
+
+#footBot {
+    .my-bg {
+        background-color: #303030;
+
+        img:hover {
+            cursor: pointer;
+            filter: invert(1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media screen and (max-width: 576px) {
+            h3 {
+                width: 100%;
+            }
+        }
+    }
+}

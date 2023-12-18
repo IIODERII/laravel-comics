@@ -56,7 +56,8 @@
         </div>
         <div class="bg-primary w-100" id="mainBottom">
             <div class="container">
-                <ul class="row list-unstyled justify-content-xxl-between justify-content-center text-uppercase text-white">
+                <ul
+                    class="m-0 row list-unstyled justify-content-xxl-between justify-content-center text-uppercase text-white">
                     @foreach ($buyList as $item)
                         <li v-for="item in buyList"
                             class="d-flex align-items-center justify-content-md-between justify-content-center py-5 col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-12">
