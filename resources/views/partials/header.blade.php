@@ -62,8 +62,12 @@
         <ul class="nav nav-underline text-uppercase flex-lg-nowrap justify-content-center" id="navBar">
             @foreach ($navItems as $item)
                 <li class="nav-item px-1">
-                    <a class="nav-link text-black fw-bold" aria-current="page" href=""
-                        @if ($item['active']) class="active" @endif>{{ $item['text'] }}
+                    <a aria-current="page" href="" @class([
+                        'nav-link',
+                        'text-black',
+                        'fw-bold',
+                        'active' => $item['active'],
+                    ])>{{ $item['text'] }}
                     </a>
                 </li>
             @endforeach
