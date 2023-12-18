@@ -9,6 +9,14 @@ $fa-font-path: "../webfonts" !default;
 
 @import "~bootstrap/scss/bootstrap";
 
-h1 {
-    color: $text-color;
+#navBar {
+    .active {
+        color: #0c7cec !important;
+    }
+
+    a {
+        font-size: 0.9em;
+        padding: 50px 0;
+        border-width: 5px !important;
+    }
 }
