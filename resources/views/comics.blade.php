@@ -37,19 +37,22 @@
                 </div>
                 <div class="bg-black">
                     <div class="container fs-3 fw-bold py-5">
-                        <div class="row align-items-start justify-content-center">
+                        <div class="row justify-content-center">
                             @foreach ($comics as $key => $comic)
                                 <div class="text-white col-12 col-md-6 col-lg-4 col-xxl-3 py-2">
-                                    <div class="c-img">
-                                        <img src="{{ $comic['thumb'] }}" :alt="title" />
-                                    </div>
-                                    <div class="py-2">
-                                        <h5>{{ $comic['title'] }}</h5>
-                                        <div>
-                                            <span>{{ $comic['price'] }}</span>
-                                            <a href="{{ route('view_comic', $key) }}" class="btn btn-primary">View More</a>
+                                    <div class="h-100 d-flex flex-column justify-content-between">
+                                        <div class="c-img">
+                                            <img src="{{ $comic['thumb'] }}" :alt="title" />
                                         </div>
 
+                                        <h5 class="py-2">{{ $comic['title'] }}</h5>
+                                        <div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>{{ $comic['price'] }}</span>
+                                                <a href="{{ route('view_comic', $key) }}" class="btn btn-primary">View
+                                                    More</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach
