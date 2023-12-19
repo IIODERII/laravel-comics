@@ -144,3 +144,28 @@ $fa-font-path: "../webfonts" !default;
         }
     }
 }
+
+#view_comic {
+    img {
+        max-height: 500px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0d6efd;
+
+        i {
+            transition: all 0.3s ease;
+        }
+        &:hover {
+            text-decoration: underline;
+
+            i.fa-arrow-right {
+                transform: translateX(5px);
+            }
+            i.fa-arrow-left {
+                transform: translateX(-5px);
+            }
+        }
+    }
+}

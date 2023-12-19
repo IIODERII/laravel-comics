@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $comics = config('db.comics');
-    return view('home', compact('comics'));
+    return redirect(route('comics'));
 });
+
+Route::get('/comics', function () {
+    $comics = config('db.comics');
+    return view('comics', compact('comics'));
+})->name('comics');
+
+Route::get('/comics/{index}', function ($index) {
+    $comics = config('db.comics');
+    $comic = $comics[$index];
+    return view('partials.view_comic', compact('comic', 'index', 'comics'));
+})->name('view_comic');

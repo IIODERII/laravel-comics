@@ -3,52 +3,52 @@
         [
             'text' => 'Characters',
             'active' => false,
-            'url' => '#',
+            'url' => '',
         ],
         [
             'text' => 'Comics',
             'active' => true,
-            'url' => '#',
+            'url' => 'comics',
         ],
         [
             'text' => 'Movies',
             'active' => false,
-            'url' => '#',
+            'url' => '',
         ],
         [
             'text' => 'Tv',
             'active' => false,
-            'url' => '#',
+            'url' => '',
         ],
         [
             'text' => 'Games',
             'active' => false,
-            'url' => '#',
+            'url' => '',
         ],
         [
             'text' => 'Collectibles',
             'active' => false,
-            'url' => '#',
+            'url' => '',
         ],
         [
             'text' => 'Videos',
             'active' => false,
-            'url' => '#',
+            'url' => '',
         ],
         [
             'text' => 'Fans',
             'active' => false,
-            'url' => '#',
+            'url' => '',
         ],
         [
             'text' => 'News',
             'active' => false,
-            'url' => '#',
+            'url' => '',
         ],
         [
             'text' => 'Shop',
             'active' => false,
-            'url' => '#',
+            'url' => '',
         ],
     ];
 @endphp
@@ -62,12 +62,13 @@
         <ul class="nav nav-underline text-uppercase flex-lg-nowrap justify-content-center" id="navBar">
             @foreach ($navItems as $item)
                 <li class="nav-item px-1">
-                    <a aria-current="page" href="" @class([
-                        'nav-link',
-                        'text-black',
-                        'fw-bold',
-                        'active' => $item['active'],
-                    ])>{{ $item['text'] }}
+                    <a aria-current="page" href="@php echo $item['url'] ? route($item['url']) : '#' @endphp"
+                        @class([
+                            'nav-link',
+                            'text-black',
+                            'fw-bold',
+                            'active' => Route::currentRouteName() == $item['url'],
+                        ])>{{ $item['text'] }}
                     </a>
                 </li>
             @endforeach

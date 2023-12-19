@@ -24,7 +24,7 @@
 
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Comics')
 
 @section('content')
     <main>
@@ -38,14 +38,18 @@
                 <div class="bg-black">
                     <div class="container fs-3 fw-bold py-5">
                         <div class="row align-items-start justify-content-center">
-                            @foreach ($comics as $comic)
+                            @foreach ($comics as $key => $comic)
                                 <div class="text-white col-12 col-md-6 col-lg-4 col-xxl-3 py-2">
                                     <div class="c-img">
                                         <img src="{{ $comic['thumb'] }}" :alt="title" />
                                     </div>
                                     <div class="py-2">
                                         <h5>{{ $comic['title'] }}</h5>
-                                        <span>{{ $comic['price'] }}</span>
+                                        <div>
+                                            <span>{{ $comic['price'] }}</span>
+                                            <a href="{{ route('view_comic', $key) }}" class="btn btn-primary">View More</a>
+                                        </div>
+
                                     </div>
                                 </div>
                             @endforeach
