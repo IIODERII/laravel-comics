@@ -62,7 +62,7 @@
         <ul class="nav nav-underline text-uppercase flex-lg-nowrap justify-content-center" id="navBar">
             @foreach ($navItems as $item)
                 <li class="nav-item px-1">
-                    <a aria-current="page" href="@php echo $item['url'] ? route($item['url']) : '#' @endphp"
+                    <a aria-current="page" href="@php echo $item['url'] ? $item['url'] : '#' @endphp"
                         @class([
                             'nav-link',
                             'text-black',
